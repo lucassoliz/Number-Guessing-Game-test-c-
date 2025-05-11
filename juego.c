@@ -3,10 +3,29 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-
+//-------------INICIO DE JUEGO-------------
 void iniciar_juego() {
-    printf("¡Bienvenido al juego de adivinar!\n");
+    printf("Bienvenido al juego de adivinar\n");
     printf("Elige un modo:\n");
     printf("1. Adivinar un número\n");
     printf("2. Adivinar una palabra\n");
+}
+//---------LOGICA DE ADIVINAR NUMERO.................
+void jugar_adivinar_numero() {
+    int numero_secreto = rand() % 100 + 1; 
+    int intento;
+
+    printf("Adivina el numero secreto (entre 1 y 100)\n");
+
+    do {
+        printf("Ingresa tu intento: ");
+        scanf("%d", &intento);
+
+        if (adivinar_numero(numero_secreto, intento)) {
+            printf("Felicidades, adivinaste el numero\n");
+            break;
+        } else {
+            printf("Intenta otra vez\n");
+        }
+    } while (1);
 }
