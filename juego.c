@@ -29,3 +29,26 @@ void jugar_adivinar_numero() {
         }
     } while (1);
 }
+
+//---------LOGICA DE ADIVINAR PALABRA............
+void jugar_adivinar_palabra() {
+    char palabra_secreta[50];
+    char intento[50];
+
+    printf("Ingresa una palabra secreta (max. 50 caracteres): ");
+    scanf("%s", palabra_secreta);
+
+    printf("Adivina la palabra secreta!\n");
+
+    do {
+        printf("Ingresa tu intento: ");
+        scanf("%s", intento);
+
+        if (adivinar_palabra(palabra_secreta, intento)) {
+            printf("Felicidades, adivinaste la palabra.\n");
+            break;
+        } else {
+            printf("Intenta otra vez\n");
+        }
+    } while (1);
+}
