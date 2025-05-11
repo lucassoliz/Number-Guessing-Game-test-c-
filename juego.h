@@ -1,5 +1,5 @@
+#ifndef JUEGO_H
 #define JUEGO_H
-
 #include <stdbool.h>
 
 void iniciar_juego();
