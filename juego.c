@@ -52,3 +52,13 @@ void jugar_adivinar_palabra() {
         }
     } while (1);
 }
+
+// ------Función para comparar dos numeros 
+bool adivinar_numero(int numero_secreto, int intento) {
+    return numero_secreto == intento;
+}
+
+// ------Función para comparar dos palabras
+bool adivinar_palabra(const char* palabra_secreta, const char* intento) {
+    return strcmp(palabra_secreta, intento) == 0;
+}
