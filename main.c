@@ -1,17 +1,28 @@
-#include <stdio.h>
 #include "juego.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 int main() {
-    int mode;
+    int opcion;
 
-    printf("Bienvenido al juego de adivinanza.\n");
-    printf("Elige el tipo de juego:\n");
-    printf("1. Juego de Número\n");
-    printf("2. Juego de Palabra\n");
-    printf("Elige una opción (1 o 2): ");
-    scanf("%d", &mode);
+    srand(time(NULL));
 
-    play_game(mode);
+    iniciar_juego();
+
+    printf("Ingresa tu opción: ");
+    scanf("%d", &opcion);
+
+    switch (opcion) {
+        case 1:
+            jugar_adivinar_numero();
+            break;
+        case 2:
+            jugar_adivinar_palabra();
+            break;
+        default:
+            printf("Opción no válida. Saliendo del juego.\n");
+    }
 
     return 0;
 }
